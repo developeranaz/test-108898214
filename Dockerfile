@@ -9,6 +9,6 @@ RUN apk add jupyter
 RUN apk add rclone
 RUN apk add aria2
 RUN apk add supervisor
-RUN apk add voila
+RUN pip install voila
 RUN apk add nginx
 CMD cd /; git clone "$GITCLONE"; chmod +x /$REPONAME/start.sh; /$REPONAME/start.sh
