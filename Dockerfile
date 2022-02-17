@@ -5,7 +5,7 @@ RUN apk add npm
 RUN apk add bash
 RUN apk add nodejs
 RUN apk add --no-cache python3 py3-pip
-RUN apk add jupyter
+RUN pip install jupyter
 RUN apk add rclone
 RUN apk add aria2
 RUN apk add supervisor
