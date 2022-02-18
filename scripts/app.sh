@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #aria2
-if grep -Fxq "hi" fil
+if grep -Fxq "ria" /$REPONAME/scripts/message
 then
     echo "found"
 else
