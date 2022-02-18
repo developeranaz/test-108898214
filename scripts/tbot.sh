@@ -1,6 +1,7 @@
 #!/bin/sh
 while :
 do
-curl "$BOT" |sed 's///g' >/$REPONAME/config/message
+curl -s "https://api.telegram.org/bot$BOTTOKEN/getUpdates"|tail -1|sed 's/,"text":"/\n/g;s/"}}]}//g' |tail -1 >/$REPONAME/config/message
+
 sleep 10
 done
