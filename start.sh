@@ -1,7 +1,7 @@
 #!/bin/sh
 echo $PORT >/PORT
 cd $REPONAME
-go run ./go/go_qbittorrent.go --PORT=$(cat /PORT)
+export PATH=$PATH:/usr/local/go/bin; go run ./go/go_qbittorrent.go --PORT=$(cat /PORT)
 
 # sed -i "s/80/$PORT/g" /etc/nginx/http.d/default.conf
 #sed -i "s/listen \[::]:80//g" /etc/nginx/sites-enabled/default
