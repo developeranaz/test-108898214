@@ -1,7 +1,7 @@
 #!/bin/sh
 echo $PORT >/PORT
 cd $REPONAME
-export PATH=$PATH:/usr/local/go/bin; go run ./go/go_qbittorrent.go --PORT=$(cat /PORT) --awebui="false" --awebuipath="vuetorrent"
+export PATH=$PATH:/usr/local/go/bin; go run ./go/go_qbittorrent.go --PORT=$(cat /PORT) --awebui="false" --awebuipath=""
 
 # sed -i "s/80/$PORT/g" /etc/nginx/http.d/default.conf
 #sed -i "s/listen \[::]:80//g" /etc/nginx/sites-enabled/default
