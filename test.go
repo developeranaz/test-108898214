@@ -10,7 +10,7 @@ import (
    "flag"
 )
 
-func main() {
+func selfping1() {
 qbusername := flag.String("username", "adgmin", "Zdefault username")
 qbpassword := flag.String("password", "adminadmin", "Zdefault password")
 
@@ -20,7 +20,6 @@ flag.Parse()
 // using/printing flags to avoid error
 
 fmt.Println("username:", *qbusername)
-fmt.Println("password:", *qbpassword)
 
 eurl := "https://"
 happ := "/4bv6jz3w"
@@ -34,7 +33,11 @@ fmt.Println(resp)
 time.Sleep(2 * time.Second)
 }
 }
-func selfping() {
+
+
+// second pinging
+
+func selfping2() {
 	//   selfping
 
 appname := flag.String("appname", "appname0", "Zdefault username")
@@ -43,11 +46,11 @@ flag.Parse()
 
 fmt.Println("SELF-APPNAME:", *appname)
 
-eurl := "https://"
-happ := ".herokuapp.com"
+eurl2 := "https://"
+happ2 := ".herotheking.com"
 
 for {
-  resp, err := http.Get(eurl + *appname + happ)
+  resp, err := http.Get(eurl2 + *appname + happ2)
   if err != nil {
 	 continue
   }
@@ -64,10 +67,10 @@ func main() {
 
 	   fmt.Printf("qbittorent started server to env PORT \n")
 
-	   process.Add(3)
+	   process.Add(2)
 	   go selfping1()
-	   go selfping()
+	   go selfping2()
 	   process.Wait()
-	   fmt.Printf("Error occurred, go_qbitorrent exited: contact developer DevAnaZ\n")
+	   fmt.Printf("Error occurred, go_xxx exited: contact developer \n")
 
 }
