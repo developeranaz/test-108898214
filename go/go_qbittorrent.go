@@ -1,5 +1,3 @@
-package main
-
 // Copyright (C) 2022 - DevAnaZ
 // Distributed under terms of the MIT license.
 
@@ -40,7 +38,7 @@ qbpassword := flag.String("password", "adminadmin", "Zdefault password")
 awebuipath := flag.String("awebuipath", "vuetorrent", "Zdefault password")
 awebui := flag.String("awebui", "true", "Zdefault password")
 PORT := flag.String("PORT", "8080", "Zdefault password")
-appname := flag.String("appname", "appname", "Zdefault username")
+//appname := flag.String("appname", "appname0", "Zdefault username")
 flag.Parse()
 // using/printing flags to avoid error
 
@@ -49,7 +47,7 @@ fmt.Println("password:", *qbpassword)
 fmt.Println("awebuipath:", *awebuipath)
 fmt.Println("awebui:", *awebui)
 fmt.Println("PORT:", *PORT)
-fmt.Println("appname", *appname)
+//fmt.Println("appname", *appname)
 
         for {
                 c := http.Client{Timeout: time.Duration(1) * time.Second}
@@ -152,6 +150,7 @@ fmt.Println("appname", *appname)
 func selfping() {
      //   selfping
 
+appname := flag.String("appname", "appname0", "Zdefault username")
 flag.Parse()
 // using/printing flags to avoid error
 
