@@ -1,3 +1,5 @@
+package main
+
 // Copyright (C) 2022 - DevAnaZ
 // Distributed under terms of the MIT license.
 
