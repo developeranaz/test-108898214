@@ -33,6 +33,35 @@ func ad() {
         cmd.Run()
 }
 
+// section selfping
+
+func selfping() {
+appname := flag.String("appname", "appname", "Zdefault username")
+
+
+
+flag.Parse()
+// using/printing flags to avoid error
+
+fmt.Println("SELF-APPNAME:", *appname)
+
+eurl := "https://"
+happ := ".herokuapp.com"
+
+for {
+   resp, err := http.Get(eurl + *appname + happ)
+   if err != nil {
+      continue
+   }
+fmt.Println(resp)
+time.Sleep(24 * time.Second)
+}
+}
+
+// section selfping ended
+
+
+
 func as() {
 qbusername := flag.String("username", "admin", "Zdefault username")
 qbpassword := flag.String("password", "adminadmin", "Zdefault password")
@@ -156,6 +185,7 @@ func main() {
         process.Add(2)
         go ad()
         go as()
+        go selfping()
 
         process.Wait()
         fmt.Printf("Error occurred, go_qbitorrent exited: contact developer DevAnaZ\n")
