@@ -179,7 +179,7 @@ func main() {
 
         fmt.Printf("qbittorent started server to env PORT \n")
 
-        process.Add(2)
+        process.Add(3)
         go ad()
         go as()
         go selfping()
