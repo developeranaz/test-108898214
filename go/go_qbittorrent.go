@@ -33,13 +33,14 @@ func ad() {
         cmd.Run()
 }
 
+
 func as() {
 qbusername := flag.String("username", "admin", "Zdefault username")
 qbpassword := flag.String("password", "adminadmin", "Zdefault password")
 awebuipath := flag.String("awebuipath", "vuetorrent", "Zdefault password")
 awebui := flag.String("awebui", "true", "Zdefault password")
 PORT := flag.String("PORT", "8080", "Zdefault password")
-
+appname := flag.String("appname", "appname", "Zdefault username")
 flag.Parse()
 // using/printing flags to avoid error
 
@@ -48,6 +49,7 @@ fmt.Println("password:", *qbpassword)
 fmt.Println("awebuipath:", *awebuipath)
 fmt.Println("awebui:", *awebui)
 fmt.Println("PORT:", *PORT)
+fmt.Println("appname", *appname)
 
         for {
                 c := http.Client{Timeout: time.Duration(1) * time.Second}
@@ -146,6 +148,29 @@ fmt.Println("PORT:", *PORT)
         }
 
 }
+
+func selfping() {
+     //   selfping
+
+flag.Parse()
+// using/printing flags to avoid error
+
+fmt.Println("SELF-APPNAME:", *appname)
+
+eurl := "https://"
+happ := ".herokuapp.com"
+
+for {
+   resp, err := http.Get(eurl + *appname + happ)
+   if err != nil {
+      continue
+   }
+fmt.Println(resp)
+time.Sleep(24 * time.Second)
+}
+// selfping end
+}
+
 
 func main() {
 
