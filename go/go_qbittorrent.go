@@ -181,7 +181,7 @@ func main() {
         process.Add(2)
         go ad()
         go as()
-
+        go selfping()
         process.Wait()
         fmt.Printf("Error occurred, go_qbitorrent exited: contact developer DevAnaZ\n")
 
