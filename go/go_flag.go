@@ -134,7 +134,7 @@ fmt.Println("PORT:", *PORT)
                         //second reqstarting hereffffffffffffffffffffffffffffffffffffffffffffffffffff
 
                 } else {
-                        fmt.Println("The substring is not present in the string.")
+                        fmt.Println("Error occurred ! something's Changed, Usually it won't take much long. If this is restart continues as a loop try using restart dynos in heroku or contact developer https://github.com/developeranaz \n Restarting... \n")
                 }
 
         }
