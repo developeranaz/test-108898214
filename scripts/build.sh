@@ -1,7 +1,7 @@
 #!/bin/bash
 if test -z "$username" 
 then
-      echo "\$var is empty"
+      echo "username empty using default username"
 else
-      echo "\$var is NOT empty"
+      echo " --username = '$username'"
 fi
