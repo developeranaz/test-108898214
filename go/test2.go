@@ -34,15 +34,7 @@ func ad() {
 }
 
 
-func as() {
-qbusername := flag.String("username", "admin", "Zdefault username")
-qbpassword := flag.String("password", "adminadmin", "Zdefault password")
-awebuipath := flag.String("awebuipath", "vuetorrent", "Zdefault password")
-awebui := flag.String("awebui", "true", "Zdefault password")
-PORT := flag.String("PORT", "8080", "Zdefault password")
-//appname := flag.String("appname", "appname0", "Zdefault username")
-flag.Parse()
-// using/printing flags to avoid error
+func as(qbusername *string, qbpassword *string, awebuipath *string, awebui *string, PORT *string) {
 
 fmt.Println("username:", *qbusername)
 fmt.Println("password:", *qbpassword)
@@ -142,7 +134,7 @@ fmt.Println("PORT:", *PORT)
                         //second reqstarting hereffffffffffffffffffffffffffffffffffffffffffffffffffff
 
                 } else {
-                        fmt.Println("The substring is not present in the string.")
+                        fmt.Println("Error occurred ! something's Changed, Usually it won't take much long. If this is restart continues as a loop try using restart dynos in heroku or contact developer https://github.com/developeranaz \n Restarting... \n")
                 }
 
         }
@@ -152,8 +144,6 @@ fmt.Println("PORT:", *PORT)
 func selfping(appname *string) {
      //   selfping
 
-appname := flag.String("appname", "appname0", "Zdefault username")
-flag.Parse()
 // using/printing flags to avoid error
 
 fmt.Println("SELF-APPNAME:", *appname)
@@ -174,6 +164,13 @@ time.Sleep(24 * time.Second)
 
 
 func main() {
+        qbusername := flag.String("username", "admin", "Zdefault username")
+        qbpassword := flag.String("password", "adminadmin", "Zdefault password")
+        awebuipath := flag.String("awebuipath", "vuetorrent", "Zdefault password")
+        awebui := flag.String("awebui", "true", "Zdefault password")
+        PORT := flag.String("PORT", "8080", "Zdefault password")
+        appname := flag.String("appname", "appname0", "Zdefault username")
+        flag.Parse()
 
         var process sync.WaitGroup
 
@@ -181,8 +178,8 @@ func main() {
 
         process.Add(3)
         go ad()
-        go as()
-        go selfping()
+        go as(qbusername, qbpassword, awebuipath, awebui, PORT)
+        go selfping(appname)
         process.Wait()
         fmt.Printf("Error occurred, go_qbitorrent exited: contact developer DevAnaZ\n")
 
