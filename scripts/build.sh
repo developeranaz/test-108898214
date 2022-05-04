@@ -1,6 +1,6 @@
 #!/bin/bash
 rm -r /$REPONAME/scripts/go_runner.sh
-echo 'export PATH=$PATH:/usr/local/go/bin; pwd; go run /$REPONAME/go/go_flags.go' >/$REPONAME/scripts/go_runner.sh
+echo 'export PATH=$PATH:/usr/local/go/bin; pwd; go run /$REPONAME/go/go_flag.go' >/$REPONAME/scripts/go_runner.sh
 # username
 if test -z "$username" 
 then
