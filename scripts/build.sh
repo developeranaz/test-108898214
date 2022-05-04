@@ -36,7 +36,7 @@ fi
 
 if test -z "$PORT" 
 then
-      echo "webui is empty using default "
+      echo "PORT is empty using default 8080"
 else
       echo " --PORT='$PORT'" >>/$REPONAME/scripts/go_runner.sh
 fi
