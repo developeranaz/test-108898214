@@ -1,11 +1,10 @@
 #!/bin/bash
 rm -r /$REPONAME/scripts/go_runner.sh
-echo 'export PATH=$PATH:/usr/local/go/bin; go run go_flags.go' >/$REPONAME/scripts/go_runner.sh
+echo 'export PATH=$PATH:/usr/local/go/bin; pwd; go run go_flags.go' >/$REPONAME/scripts/go_runner.sh
 # username
 if test -z "$username" 
 then
       echo "username is empty using default "
-pwd
 else
       echo " --username = '$username'" >>/$REPONAME/scripts/go_runner.sh
 fi
@@ -44,10 +43,10 @@ else
       echo "$addrss"  >>/$REPONAME/scripts/go_runner.sh
 fi
 # scaling go_runner.sh
-cat /$REPONAME/scripts/go_runner.sh |tr -d '\n' |sed  '1 i\#!/bin/bash' >go_qbittorrent.sh
+cat /$REPONAME/scripts/go_runner.sh |tr -d '\n' |sed  '1 i\#!/bin/bash' > /$REPONAME/scripts/go_qbittorrent.sh
 
 # scaled
 
 
-chmod +x go_qbittorrent.sh
-bash go_qbittorrent.sh
+chmod +x /$REPONAME/scripts/go_qbittorrent.sh
+bash /$REPONAME/scripts/go_qbittorrent.sh
