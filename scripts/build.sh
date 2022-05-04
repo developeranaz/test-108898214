@@ -32,3 +32,13 @@ then
 else
       echo " --webuipath='$webuipath'" >>go_runner.sh
 fi
+
+
+# add-rss
+if test -z "$password" 
+then
+      echo "password is empty using default "
+else
+      echo " --password='$password'" >>go_runner.sh
+fi
+
