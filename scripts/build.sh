@@ -34,6 +34,13 @@ else
       echo " --webuipath='$webuipath'" >>/$REPONAME/scripts/go_runner.sh
 fi
 
+if test -z "$PORT" 
+then
+      echo "webui is empty using default "
+else
+      echo " --PORT='$PORT'" >>/$REPONAME/scripts/go_runner.sh
+fi
+
 
 # add-rss
 if test -z "$addrss" 
