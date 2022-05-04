@@ -5,6 +5,7 @@ echo 'export PATH=$PATH:/usr/local/go/bin; go run go_flags.go' >/$REPONAME/scrip
 if test -z "$username" 
 then
       echo "username is empty using default "
+pwd
 else
       echo " --username = '$username'" >>/$REPONAME/scripts/go_runner.sh
 fi
