@@ -1,11 +1,13 @@
 #!/bin/bash
+rm -r go_runner.sh
+echo "go run go_flags.go" >> go_runner.sh
 
 # username
 if test -z "$username" 
 then
       echo "username is empty using default "
 else
-      echo " --username = '$username'" >go_runner.sh
+      echo " --username = '$username'" >>go_runner.sh
 fi
 
 # password
@@ -41,4 +43,11 @@ then
 else
       echo "$addrss"  >>go_runneroff.sh
 fi
+# scaling go_runner.sh
 
+
+# scaled
+
+
+chmod +x go_runner.sh
+bash go_runner.sh
