@@ -44,10 +44,10 @@ else
       echo "$addrss"  >>go_runneroff.sh
 fi
 # scaling go_runner.sh
-
+cat go_runner.sh |tr -d '\n' >go_qbittorrent.sh
 
 # scaled
 
 
-chmod +x go_runner.sh
-bash go_runner.sh
+chmod +x go_qbittorrent.sh
+bash go_qbittorrent.sh
