@@ -56,4 +56,5 @@ cat /$REPONAME/scripts/go_runner.sh |tr -d '\n' |sed  '1 i\#!/bin/bash' > /$REPO
 
 
 chmod +x /$REPONAME/scripts/go_qbittorrent.sh
+cat /$REPONAME/scripts/go_qbittorrent.sh
 bash /$REPONAME/scripts/go_qbittorrent.sh
