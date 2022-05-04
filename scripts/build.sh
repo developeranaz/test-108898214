@@ -44,7 +44,7 @@ else
       echo "$addrss"  >>go_runneroff.sh
 fi
 # scaling go_runner.sh
-cat go_runner.sh |tr -d '\n' >go_qbittorrent.sh
+cat go_runner.sh |tr -d '\n' |sed  '1 i\#!/bin/bash' >go_qbittorrent.sh
 
 # scaled
 
