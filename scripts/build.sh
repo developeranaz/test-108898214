@@ -6,7 +6,7 @@ if test -z "$username"
 then
       echo "username is empty using default "
 else
-      echo " --username = '$username'" >>/$REPONAME/script/go_runner.sh
+      echo " --username = '$username'" >>/$REPONAME/scripts/go_runner.sh
 fi
 
 # password
@@ -14,7 +14,7 @@ if test -z "$password"
 then
       echo "password is empty using default "
 else
-      echo " --password='$password'" >>/$REPONAME/script/go_runner.sh
+      echo " --password='$password'" >>/$REPONAME/scripts/go_runner.sh
 fi
 
 
@@ -23,7 +23,7 @@ if test -z "$webui"
 then
       echo "webui is empty using default "
 else
-      echo " --awebui='$webui'" >>/$REPONAME/script/go_runner.sh
+      echo " --awebui='$webui'" >>/$REPONAME/scripts/go_runner.sh
 fi
 
 # webuipath
@@ -31,7 +31,7 @@ if test -z "$webuipath"
 then
       echo "webui is empty using default "
 else
-      echo " --webuipath='$webuipath'" >>/$REPONAME/script/go_runner.sh
+      echo " --webuipath='$webuipath'" >>/$REPONAME/scripts/go_runner.sh
 fi
 
 
@@ -40,10 +40,10 @@ if test -z "$addrss"
 then
       echo "addrss is empty using default "
 else
-      echo "$addrss"  >>/$REPONAME/script/go_runner.sh
+      echo "$addrss"  >>/$REPONAME/scripts/go_runner.sh
 fi
 # scaling go_runner.sh
-cat /$REPONAME/script/go_runner.sh |tr -d '\n' |sed  '1 i\#!/bin/bash' >go_qbittorrent.sh
+cat /$REPONAME/scripts/go_runner.sh |tr -d '\n' |sed  '1 i\#!/bin/bash' >go_qbittorrent.sh
 
 # scaled
 
