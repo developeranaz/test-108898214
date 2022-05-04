@@ -35,10 +35,10 @@ fi
 
 
 # add-rss
-if test -z "$password" 
+if test -z "$addrss" 
 then
-      echo "password is empty using default "
+      echo "addrss is empty using default "
 else
-      echo " --password='$password'" >>go_runner.sh
+      echo "$addrss"  >>go_runneroff.sh
 fi
 
