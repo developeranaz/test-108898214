@@ -6,7 +6,7 @@ if test -z "$username"
 then
       echo "username is empty using default "
 else
-      echo " --username = '$username'" >>/$REPONAME/scripts/go_runner.sh
+      echo " --username='$username'" >>/$REPONAME/scripts/go_runner.sh
 fi
 
 # password
