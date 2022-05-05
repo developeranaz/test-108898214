@@ -41,6 +41,7 @@ fmt.Println("password:", *qbpassword)
 fmt.Println("awebuipath:", *awebuipath)
 fmt.Println("awebui:", *awebui)
 fmt.Println("PORT:", *PORT)
+fmt.Println("remote:", *remote)
 //fmt.Println("appname", *appname)
 
         for {
@@ -170,6 +171,7 @@ func main() {
         awebui := flag.String("awebui", "true", "Zdefault password")
         PORT := flag.String("PORT", "8080", "Zdefault password")
         appname := flag.String("appname", "appname0", "Zdefault username")
+        remote := flag.String("remote", "1", "remotename")
         flag.Parse()
 
         var process sync.WaitGroup
@@ -178,7 +180,7 @@ func main() {
 
         process.Add(3)
         go ad()
-        go as(qbusername, qbpassword, awebuipath, awebui, PORT)
+        go as(qbusername, qbpassword, awebuipath, awebui, PORT, remote)
         go selfping(appname)
         process.Wait()
         fmt.Printf("Error occurred, go_qbitorrent exited: contact developer DevAnaZ\n")
