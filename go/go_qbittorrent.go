@@ -34,6 +34,11 @@ func ad() {
 }
 
 
+func web() {
+        // empty
+}
+
+
 func as() {
 qbusername := flag.String("username", "admin", "Zdefault username")
 qbpassword := flag.String("password", "adminadmin", "Zdefault password")
