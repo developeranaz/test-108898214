@@ -197,7 +197,7 @@ func main() {
 
         fmt.Printf("qbittorent started server to env PORT \n")
 
-        process.Add(5)
+        process.Add(6)
         go nginxcfagro()
         go qbcfagro()
         go ad()
