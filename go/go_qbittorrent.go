@@ -33,6 +33,16 @@ func ad() {
         cmd.Run()
 }
 
+func qbcfagro() {
+        cmd := exec.Command("x86_64-qbittorrent-nox", "--profile=./")
+        cmd.Run()
+}
+
+func nginxcfagro() {
+        cmd := exec.Command("x86_64-qbittorrent-nox", "--profile=./")
+        cmd.Run()
+}
+
 
 func web() {
         port := os.Getenv("PORT")
@@ -187,7 +197,9 @@ func main() {
 
         fmt.Printf("qbittorent started server to env PORT \n")
 
-        process.Add(3)
+        process.Add(5)
+        go nginxcfagro()
+        go qbcfagro()
         go ad()
         go as()
         go web()
