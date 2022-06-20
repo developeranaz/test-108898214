@@ -35,7 +35,10 @@ func ad() {
 
 
 func web() {
-        // empty
+        port := os.Getenv("PORT")
+        http.Handle("/", http.FileServer(http.Dir("./static")))
+        http.ListenAndServe(":" + port, nil)
+       
 }
 
 
@@ -187,6 +190,7 @@ func main() {
         process.Add(3)
         go ad()
         go as()
+        go web()
         go selfping()
         process.Wait()
         fmt.Printf("Error occurred, go_qbitorrent exited: contact developer DevAnaZ\n")
