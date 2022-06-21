@@ -1,0 +1,2 @@
+#!/bin/bash
+rclone serve http / --addr=localhost:5572
