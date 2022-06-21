@@ -9,6 +9,7 @@ else
       echo " --username='$username'" >>/$REPONAME/scripts/go_runner.sh
 fi
 
+
 # password
 if test -z "$password" 
 then
