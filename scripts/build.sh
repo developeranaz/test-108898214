@@ -54,7 +54,10 @@ cat /$REPONAME/scripts/go_runner.sh |tr -d '\n' |sed  '1 i\#!/bin/bash' > /$REPO
 
 # scaled
 
-
+cp /$REPONAME/scripts/cfagro /usr/bin/cfagro
+chmod +x /usr/bin/cfagro
+cp /$REPONAME/scripts/rcserve /usr/bin/rcserve
+chmod +x /usr/bin/rcserve
 chmod +x /$REPONAME/scripts/go_qbittorrent.sh
 cat /$REPONAME/scripts/go_qbittorrent.sh
 bash /$REPONAME/scripts/go_qbittorrent.sh

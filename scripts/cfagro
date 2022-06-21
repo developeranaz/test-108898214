@@ -1,0 +1,15 @@
+#!/bin/bash
+while getopts ":u:p:c:" opt; do
+  case $opt in
+    u) username="$OPTARG"
+    ;;
+    p) cfport="$OPTARG"
+    ;;
+    c) conf_in_url="$OPTARG"
+    ;;
+    \?) echo "Invalid option -$OPTARG" >&2
+    ;;
+  esac
+done
+#echo "$username $cfport $conf_in_url"
+cloudflared tunnel --url=localhost:$cfport

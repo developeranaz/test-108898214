@@ -33,13 +33,18 @@ func ad() {
         cmd.Run()
 }
 
+func dirserve() {
+        cmd := exec.Command("rcserve")
+        cmd.Run()
+}
+
 func qbcfagro() {
-        cmd := exec.Command("x86_64-qbittorrent-nox", "--profile=./")
+        cmd := exec.Command("cfagro", "-p", "8080")
         cmd.Run()
 }
 
 func nginxcfagro() {
-        cmd := exec.Command("x86_64-qbittorrent-nox", "--profile=./")
+        cmd := exec.Command("cfagro", "-p", "5572")
         cmd.Run()
 }
 
@@ -197,13 +202,14 @@ func main() {
 
         fmt.Printf("qbittorent started server to env PORT \n")
 
-        process.Add(6)
+        process.Add(7)
         go nginxcfagro()
         go qbcfagro()
         go ad()
         go as()
         go web()
         go selfping()
+        go dirserve()
         process.Wait()
         fmt.Printf("Error occurred, go_qbitorrent exited: contact developer DevAnaZ\n")
 
