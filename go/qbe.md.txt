@@ -1,8 +1,0 @@
-curl 'https://revel-6.herokuapp.com/api/v2/rss/addFeed?l2pqj91s' \
-  -H 'Accept: text/javascript, text/html, application/xml, text/xml, */*' \
-  -H 'Referer: https://revel-6.herokuapp.com/newfeed.html?path=' \
-  -H 'X-Requested-With: XMLHttpRequest' \
-  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36' \
-  -H 'Content-type: application/x-www-form-urlencoded; charset=UTF-8' \
-  --data-raw 'url=https%3A%2F%2Fuippppp.cem%2Fanax&path=' \
-  --compressed
